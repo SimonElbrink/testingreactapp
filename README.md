@@ -1,3 +1,11 @@
+Make sure you have the Spring Application installed and running when you look for data.
+[Repo Here.](https://github.com/SimonElbrink/todo-it-spring)
+
+Install ``node_modules`` by running:
+### ``npm install``
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
