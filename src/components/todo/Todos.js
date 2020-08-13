@@ -58,7 +58,6 @@ const Todos = () => {
               <th>Description</th>
               <th>Assigned to</th>
               <th>Done</th>
-              <th></th>
             </tr>
           </thead>
           {/* if the search resulted in more then one result then show the search otherwise  show the original result of todos. 

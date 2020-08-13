@@ -9,7 +9,7 @@ of users */
 import React, { useReducer } from 'react';
 import TodoContext from './TodoContext';
 import TodoReducer from './TodoReducer';
-import { GET_TODO, SET_LOADING, GET_TODOS, GET_USERS } from './../types';
+import { GET_TODO, SET_LOADING, GET_TODOS, GET_USERS } from '../types';
 import axios from 'axios';
 import history from '../../components/layout/History';
 
@@ -48,7 +48,7 @@ const TodoAction = (props) => {
             Accept: '*/*',
           },
         })
-        .then((res) => {
+        .then(() => {
           history.goBack();
         })
         .catch((error) => {
