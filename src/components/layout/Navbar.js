@@ -1,3 +1,6 @@
+/* Navbar component is used as navigation in the application, here we use Link to navigate to different components.
+ */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 

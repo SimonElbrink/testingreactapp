@@ -1,3 +1,5 @@
+/* Spinner component to indicate that the application is working if the api call takes time   */
+
 import React, { Fragment } from 'react';
 import spinner from './spinner.gif';
 

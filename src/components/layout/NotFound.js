@@ -1,3 +1,4 @@
+/* NotFound component is used as a landing page in the application if the url doesn´t match any of our existing routes stated in App.js */
 import React from 'react';
 
 const NotFound = () => {
