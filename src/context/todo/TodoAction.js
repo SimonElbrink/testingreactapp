@@ -30,7 +30,7 @@ const TodoAction = (props) => {
     setLoading();
     if (todo.id != null) {
       axios
-        .put(`http://localhost:8080/api/todoItem/` + todo.id, todo, {
+        .put(`https://nameless-sea-91978.herokuapp.com/api/todoItem/` + todo.id, todo, {
           headers: {
             Accept: '*/*',
           },
@@ -43,7 +43,7 @@ const TodoAction = (props) => {
         });
     } else {
       axios
-        .post(`http://localhost:8080/api/todoItem/`, todo, {
+        .post(`https://nameless-sea-91978.herokuapp.com/api/todoItem/`, todo, {
           headers: {
             Accept: '*/*',
           },
@@ -62,7 +62,7 @@ const TodoAction = (props) => {
   const getTodos = async () => {
     setLoading();
     await axios
-      .get(`http://localhost:8080/api/todoItem`)
+      .get(`https://nameless-sea-91978.herokuapp.com/api/todoItem`)
       .then((res) => {
         dispatch({
           type: GET_TODOS,
@@ -79,7 +79,7 @@ const TodoAction = (props) => {
   const getTodo = async (todoId) => {
     setLoading();
     await axios
-      .get(`http://localhost:8080/api/todoItem/` + todoId)
+      .get(`https://nameless-sea-91978.herokuapp.com/api/todoItem/` + todoId)
       .then((res) => {
         const users = [
           {
