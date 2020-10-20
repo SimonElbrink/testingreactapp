@@ -5,6 +5,7 @@ import TodoContext from './../../context/todo/TodoContext';
 import { useForm } from 'react-hook-form';
 import Spinner from './../layout/Spinner';
 import { Link, useParams } from 'react-router-dom';
+import './../../App.css';
 
 const TodoForm = () => {
   //we use the context to access the methods and states
@@ -49,17 +50,23 @@ const TodoForm = () => {
           <input type='hidden' name='id' value={todo.id} ref={register} />
         )}
         {/* The form uses htmlFor to connect the label with input. aria-invalid sets
-        the error if required is fufilled or not, the defaultValue in determined
+        the error if required is fulfilled or not, the defaultValue in determined
         if the todo exists */}
-        <label htmlFor='deadline'>Deadline</label>
-        <input
-          type='text'
-          name='deadline'
-          aria-invalid={errors.deadline ? 'true' : 'false'}
-          defaultValue={isNew ? '' : todo.deadline}
-          ref={register({ required: true })}
-        />
-        <label htmlFor='title'>Title</label>
+
+          <label htmlFor='deadline' className='form-text'>
+            Deadline
+          </label>
+          <input
+              type='datetime-local'
+              name='deadline'
+              aria-invalid={errors.deadline ? 'true' : 'false'}
+              defaultValue={isNew ? '' : todo.deadline}
+              ref={register({ required: true })}
+          />
+
+        <label htmlFor='title' className='form-text'>
+          Title
+        </label>
         <input
           type='text'
           name='title'
@@ -67,14 +74,18 @@ const TodoForm = () => {
           defaultValue={isNew ? '' : todo.title}
           ref={register({ required: true })}
         />
-        <label htmlFor='description'>Description</label>
+        <label htmlFor='description' className='form-text'>
+          Description
+        </label>
         <input
           type='text'
           name='description'
           defaultValue={isNew ? '' : todo.description}
           ref={register}
         />
-        <label htmlFor='assignee'>Assigned To</label>
+        <label htmlFor='assignee' className='form-text'>
+          Assigned To
+        </label>
         <select name='assignee' ref={register}>
           {users.map((user) => (
             <option
@@ -98,7 +109,7 @@ const TodoForm = () => {
           {/* if there is an error in title or deadline these errors with show up. && is used as "if true"  */}
           {errors.deadline && <span role='alert'>Deadline is required</span>}
           {errors.title && <span role='alert'>Title is required</span>}
-          <button type='submit'>Save</button>
+          <button type='submit' className='btn btn-success'>Save</button>
         </div>
       </form>
     </Fragment>

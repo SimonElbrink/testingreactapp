@@ -110,29 +110,19 @@ const TodoAction = (props) => {
   };
   /* getUsers get a specific Todos using a local static list  and then using dispatch to set the state of users in the reducer */
 
-  const getUsers = () => {
-    const res = [
-      {
-        firstName: 'Fredrik',
-        lastName: 'Odin',
-        id: 'Example-User-3',
-      },
-      {
-        firstName: 'Simon',
-        lastName: 'Elbrink',
-        id: 'Example-User-1',
-      },
-      {
-        firstName: 'Ulf',
-        lastName: 'Bengtsson',
-        id: 'Example-User-2',
-      },
-    ];
-
-    dispatch({
-      type: GET_USERS,
-      payload: res,
-    });
+  const getUsers = async () => {
+    setLoading();
+    await axios
+        .get(`https://nameless-sea-91978.herokuapp.com/api/appUser`)
+        .then((res) => {
+          dispatch({
+            type: GET_USERS,
+            payload: res.data,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
   };
 
   /* setLoading sets loading and then using dispatch to set the state of loading in the reducer */
